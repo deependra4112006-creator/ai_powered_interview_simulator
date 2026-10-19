@@ -1,0 +1,866 @@
+{
+  "users": [
+    {
+      "_id": "user_1791867129036_ovu2q9",
+      "name": "Alex Chen",
+      "email": "alex.chen@interviewai.demo",
+      "password": "$2a$10$CLdifWvNqkPsQ3nkeREHvuswcacR7anQTNutnw6QrSD6o1r.M1qly",
+      "role": "Full Stack Developer",
+      "experienceLevel": "Junior (1-3 yrs)",
+      "skills": [
+        "JavaScript",
+        "React",
+        "Node.js",
+        "REST APIs",
+        "System Design",
+        "Git"
+      ],
+      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+      "createdAt": "2026-10-13T04:52:09.036Z"
+    }
+  ],
+  "sessions": [
+    {
+      "_id": "session_1791956967933_3iphbz",
+      "userId": "user_1791867129036_ovu2q9",
+      "title": "Full Stack Developer (Coding - Medium)",
+      "role": "Full Stack Developer",
+      "experienceLevel": "Junior (1-3 yrs)",
+      "interviewMode": "coding",
+      "interactionMode": "voice",
+      "skills": [
+        "JavaScript",
+        "React",
+        "Node.js",
+        "REST APIs",
+        "System Design",
+        "Git"
+      ],
+      "difficulty": "Medium",
+      "status": "in-progress",
+      "currentQuestionIndex": 0,
+      "questions": [
+        {
+          "id": "be_tech_1",
+          "role": "Backend Developer",
+          "experienceLevels": [
+            "Fresher / Entry Level",
+            "Junior (1-3 yrs)",
+            "Mid-Level (3-5 yrs)"
+          ],
+          "mode": "technical",
+          "category": "Technical",
+          "difficulty": "Medium",
+          "questionText": "What is the difference between SQL and NoSQL databases? In what scenarios would you choose MongoDB over PostgreSQL, and vice versa?",
+          "expectedConcepts": [
+            "Relational vs Non-relational",
+            "ACID transactions vs BASE",
+            "Schema rigidity vs flexible document model",
+            "Horizontal vs vertical scaling",
+            "Foreign keys and complex joins"
+          ],
+          "hints": [
+            "Compare schema flexibility and how relational integrity is maintained.",
+            "Consider queries with deep relationships and joins versus hierarchical, nested documents.",
+            "Discuss horizontal scaling (sharding) vs vertical scaling."
+          ],
+          "idealAnswer": "SQL databases (like PostgreSQL) are relational, use structured schemas with tables, enforce strict ACID transactions, and excel at complex queries with joins and data integrity across related entities. NoSQL databases (like MongoDB) are document-oriented, store JSON-like schemas, and are designed for horizontal scalability and fast read/writes of nested or polymorphic data. I would choose PostgreSQL for financial transactions, multi-table relationship integrity, and complex analytics. I would choose MongoDB for rapidly evolving schemas, content management, real-time logging, and catalogs with variable attributes."
+        },
+        {
+          "id": "fe_coding_1",
+          "role": "Frontend Developer",
+          "experienceLevels": [
+            "Fresher / Entry Level",
+            "Junior (1-3 yrs)",
+            "Mid-Level (3-5 yrs)"
+          ],
+          "mode": "coding",
+          "category": "Coding",
+          "difficulty": "Medium",
+          "questionText": "Implement a debounce function in JavaScript that delays invoking a given callback until after a specified wait duration has elapsed since the last time it was called. It should support passing the latest arguments and preserving the `this` context.",
+          "expectedConcepts": [
+            "Closures",
+            "setTimeout and clearTimeout",
+            "Preserving `this` context",
+            "Forwarding arguments",
+            "Event handlers"
+          ],
+          "hints": [
+            "Use a variable in the outer closure to store the timer ID.",
+            "Whenever the returned function is called, clear any pending timer.",
+            "Schedule a new timer with setTimeout to execute the callback with args."
+          ],
+          "starterCode": "function debounce(func, wait) {\n  // Your code here\n}\n\n// Example usage:\n// const log = debounce((text) => console.log(text), 300);\n// log('hello');",
+          "testCases": [
+            {
+              "input": "debounce(fn, 100) called 3 times rapidly at 0ms, 20ms, 40ms",
+              "expectedOutput": "Executed exactly once at 140ms with latest arguments",
+              "description": "Debounces rapid invocations"
+            },
+            {
+              "input": "debounce(fn, 50) called with args (\"test\")",
+              "expectedOutput": "fn invoked with (\"test\")",
+              "description": "Passes correct arguments"
+            }
+          ],
+          "idealAnswer": "function debounce(func, wait) {\n  let timerId = null;\n  return function(...args) {\n    const context = this;\n    if (timerId) clearTimeout(timerId);\n    timerId = setTimeout(() => {\n      func.apply(context, args);\n    }, wait);\n  };\n}"
+        },
+        {
+          "id": "hr_beh_2",
+          "role": "All Roles",
+          "experienceLevels": [
+            "Fresher / Entry Level",
+            "Junior (1-3 yrs)",
+            "Mid-Level (3-5 yrs)",
+            "Senior (5+ yrs)"
+          ],
+          "mode": "behavioral",
+          "category": "Behavioral",
+          "difficulty": "Medium",
+          "questionText": "Describe a situation where you had to learn a completely new technology or framework under tight deadlines. How did you manage your time and ensure successful delivery?",
+          "expectedConcepts": [
+            "Growth mindset",
+            "Prioritization",
+            "Documentation & community resources",
+            "Incremental prototyping",
+            "Delivering under pressure"
+          ],
+          "hints": [
+            "Highlight how you broke down the learning curve into manageable modules.",
+            "Discuss how you built a small proof of concept before tackling full production code.",
+            "Show enthusiasm for continuous learning and adaptability."
+          ],
+          "idealAnswer": "Situation: Our team needed to integrate a GraphQL service with Apollo Client for a mobile web feature, a technology I had not used before, with a 2-week deadline. Task: I was responsible for delivering the data-fetching layer while ensuring zero regressions. Action: I dedicated the first two days to official documentation and tutorials, built a sandbox prototype to validate query caching, and paired with a senior dev for a quick architecture review. Result: The integration launched two days ahead of schedule, with reusable custom hooks that the team adopted across two other features."
+        },
+        {
+          "id": "be_coding_1",
+          "role": "Backend Developer",
+          "experienceLevels": [
+            "Fresher / Entry Level",
+            "Junior (1-3 yrs)",
+            "Mid-Level (3-5 yrs)"
+          ],
+          "mode": "coding",
+          "category": "Coding",
+          "difficulty": "Medium",
+          "questionText": "Given an array of integers `nums` and an integer `target`, return indices of the two numbers such that they add up to `target`. Assume each input has exactly one solution, and you may not use the same element twice. Achieve O(n) time complexity.",
+          "expectedConcepts": [
+            "Hash map / Map lookup",
+            "One-pass algorithm",
+            "O(n) time complexity",
+            "O(n) space complexity",
+            "Index mapping"
+          ],
+          "hints": [
+            "As you iterate through the array, calculate the complement: `target - nums[i]`.",
+            "Check if that complement already exists in your hash map.",
+            "If not, store the current number and its index in the map."
+          ],
+          "starterCode": "function twoSum(nums, target) {\n  // Return [index1, index2]\n  return [];\n}",
+          "testCases": [
+            {
+              "input": "nums = [2, 7, 11, 15], target = 9",
+              "expectedOutput": "[0, 1]",
+              "description": "Basic pair"
+            },
+            {
+              "input": "nums = [3, 2, 4], target = 6",
+              "expectedOutput": "[1, 2]",
+              "description": "Non-consecutive indices"
+            },
+            {
+              "input": "nums = [3, 3], target = 6",
+              "expectedOutput": "[0, 1]",
+              "description": "Duplicate numbers"
+            }
+          ],
+          "idealAnswer": "function twoSum(nums, target) {\n  const map = new Map();\n  for (let i = 0; i < nums.length; i++) {\n    const complement = target - nums[i];\n    if (map.has(complement)) {\n      return [map.get(complement), i];\n    }\n    map.set(nums[i], i);\n  }\n  return [];\n}"
+        },
+        {
+          "id": "hr_beh_3",
+          "role": "All Roles",
+          "experienceLevels": [
+            "Fresher / Entry Level",
+            "Junior (1-3 yrs)",
+            "Mid-Level (3-5 yrs)"
+          ],
+          "mode": "behavioral",
+          "category": "Behavioral",
+          "difficulty": "Medium",
+          "questionText": "Why are you interested in this role and our company, and what unique value do you bring as a candidate?",
+          "expectedConcepts": [
+            "Company alignment",
+            "Self-awareness of strengths",
+            "Career trajectory",
+            "Passionate work ethic",
+            "Relevant skills match"
+          ],
+          "hints": [
+            "Connect your genuine technical interests with the company mission.",
+            "State 2-3 concrete skills or traits you possess (e.g. attention to detail, quick learner).",
+            "Show excitement about growing with the team."
+          ],
+          "idealAnswer": "I am drawn to this role because it aligns directly with my passion for building high-performance, user-centric software that scales. Over my recent projects, I have developed strong fundamentals in full-stack JavaScript, writing clean, testable code, and collaborating constructively in Agile environments. What sets me apart is my relentless curiosity, fast learning curve, and dedication to user experience. I am excited to contribute immediately to your product roadmap while continuing to grow with your engineering team."
+        }
+      ],
+      "startedAt": "2026-10-14T05:49:27.933Z",
+      "totalDurationSeconds": 0,
+      "overallFeedback": {
+        "overallScore": 0,
+        "technicalReadiness": 0,
+        "communicationScore": 0,
+        "problemSolvingScore": 0,
+        "strengthsSummary": [],
+        "weaknessesSummary": [],
+        "actionableTips": [],
+        "recommendation": "In Progress",
+        "summaryText": ""
+      }
+    },
+    {
+      "_id": "session_1791956897316_zm2bs2",
+      "userId": "user_1791867129036_ovu2q9",
+      "title": "Full Stack Developer (Technical - Medium)",
+      "role": "Full Stack Developer",
+      "experienceLevel": "Junior (1-3 yrs)",
+      "interviewMode": "technical",
+      "interactionMode": "voice",
+      "skills": [
+        "JavaScript",
+        "React",
+        "Node.js",
+        "REST APIs",
+        "System Design",
+        "Git"
+      ],
+      "difficulty": "Medium",
+      "status": "in-progress",
+      "currentQuestionIndex": 0,
+      "questions": [
+        {
+          "id": "fs_tech_1",
+          "role": "Full Stack Developer",
+          "experienceLevels": [
+            "Fresher / Entry Level",
+            "Junior (1-3 yrs)",
+            "Mid-Level (3-5 yrs)"
+          ],
+          "mode": "technical",
+          "category": "Technical",
+          "difficulty": "Medium",
+          "questionText": "Explain how JWT (JSON Web Token) authentication works end-to-end. Compare storing tokens in localStorage vs httpOnly Secure Cookies in terms of security (XSS vs CSRF).",
+          "expectedConcepts": [
+            "JWT header, payload, and signature",
+            "Stateless authentication",
+            "localStorage vulnerability to XSS",
+            "httpOnly cookies protection against XSS",
+            "CSRF vulnerability and SameSite attribute / CSRF tokens",
+            "Token expiration & refresh token rotation"
+          ],
+          "hints": [
+            "Break down the structure of a JWT (Header.Payload.Signature).",
+            "If an attacker executes malicious JavaScript (XSS), what storage mechanism can they access?",
+            "How does SameSite cookie attribute mitigate CSRF attacks?"
+          ],
+          "idealAnswer": "JWTs consist of three parts: Header, Payload, and Signature, signed with a secret or private key. Upon login, the server signs and returns the token; the client attaches it to subsequent requests. Storing JWTs in localStorage is susceptible to Cross-Site Scripting (XSS), as any injected JS script can read localStorage and exfiltrate tokens. Storing tokens in httpOnly Secure cookies prevents JS access, effectively neutralizing XSS token theft. However, cookies are vulnerable to CSRF, which is mitigated using the SameSite=Strict/Lax cookie attribute and anti-CSRF tokens. Best practice is short-lived access tokens in memory/httpOnly cookies combined with refresh token rotation."
+        },
+        {
+          "id": "be_tech_2",
+          "role": "Backend Developer",
+          "experienceLevels": [
+            "Junior (1-3 yrs)",
+            "Mid-Level (3-5 yrs)",
+            "Senior (5+ yrs)"
+          ],
+          "mode": "technical",
+          "category": "Architecture",
+          "difficulty": "Medium",
+          "questionText": "How would you design a rate limiter for a public REST API? Compare Token Bucket and Sliding Window Log algorithms, and explain how Redis can be used in a distributed environment.",
+          "expectedConcepts": [
+            "Rate limiting algorithms",
+            "Token Bucket vs Sliding Window",
+            "Distributed state with Redis",
+            "Race conditions & atomic Lua scripts",
+            "HTTP 429 Too Many Requests with Retry-After header"
+          ],
+          "hints": [
+            "Think about burst traffic handling vs uniform pacing.",
+            "How do you avoid race conditions when multiple API server nodes handle requests concurrently?",
+            "Redis INCR or sorted sets with Lua scripts ensure atomic checks."
+          ],
+          "idealAnswer": "A rate limiter protects APIs from abuse and denial of service. The Token Bucket algorithm allows token accumulation up to a maximum capacity, accommodating bursts while enforcing a steady refill rate. The Sliding Window Counter or Log algorithm tracks timestamps in a rolling window, eliminating edge-case burst spikes at boundary resets. In a distributed multi-server setup, state must be centralized in Redis. We use Redis sorted sets or key increments evaluated via atomic Lua scripts to prevent race conditions across parallel requests. When limits are exceeded, return HTTP 429 with Retry-After and X-RateLimit headers."
+        },
+        {
+          "id": "devops_tech_1",
+          "role": "DevOps / Cloud Engineer",
+          "experienceLevels": [
+            "Fresher / Entry Level",
+            "Junior (1-3 yrs)",
+            "Mid-Level (3-5 yrs)"
+          ],
+          "mode": "technical",
+          "category": "Technical",
+          "difficulty": "Medium",
+          "questionText": "What is the difference between Containerization (Docker) and Virtual Machines (VMs)? How does Docker leverage the Linux kernel features (namespaces and cgroups)?",
+          "expectedConcepts": [
+            "Docker vs Hypervisor",
+            "Shared Host Kernel vs Guest OS",
+            "Namespaces for isolation",
+            "Control Groups (cgroups) for resource limits",
+            "Startup time & overhead"
+          ],
+          "hints": [
+            "VMs virtualize hardware and run an entire guest operating system.",
+            "Containers share the host OS kernel and package only the application and runtime dependencies.",
+            "Namespaces isolate processes, networks, and filesystems; cgroups govern CPU and memory limits."
+          ],
+          "idealAnswer": "Virtual Machines virtualize the underlying hardware via a hypervisor (e.g. VMware, KVM), requiring a complete guest operating system for each VM, which introduces significant memory overhead and multi-minute boot times. Docker containers share the host Linux kernel, isolating user-space processes. Docker achieves isolation using Linux namespaces (PID, NET, MNT, IPC, UTS) to provide private views of processes, network interfaces, and file systems, and cgroups (control groups) to enforce resource boundaries on CPU, memory, and I/O. This results in lightweight containers that start in milliseconds and maximize host utilization."
+        },
+        {
+          "id": "hr_beh_2",
+          "role": "All Roles",
+          "experienceLevels": [
+            "Fresher / Entry Level",
+            "Junior (1-3 yrs)",
+            "Mid-Level (3-5 yrs)",
+            "Senior (5+ yrs)"
+          ],
+          "mode": "behavioral",
+          "category": "Behavioral",
+          "difficulty": "Medium",
+          "questionText": "Describe a situation where you had to learn a completely new technology or framework under tight deadlines. How did you manage your time and ensure successful delivery?",
+          "expectedConcepts": [
+            "Growth mindset",
+            "Prioritization",
+            "Documentation & community resources",
+            "Incremental prototyping",
+            "Delivering under pressure"
+          ],
+          "hints": [
+            "Highlight how you broke down the learning curve into manageable modules.",
+            "Discuss how you built a small proof of concept before tackling full production code.",
+            "Show enthusiasm for continuous learning and adaptability."
+          ],
+          "idealAnswer": "Situation: Our team needed to integrate a GraphQL service with Apollo Client for a mobile web feature, a technology I had not used before, with a 2-week deadline. Task: I was responsible for delivering the data-fetching layer while ensuring zero regressions. Action: I dedicated the first two days to official documentation and tutorials, built a sandbox prototype to validate query caching, and paired with a senior dev for a quick architecture review. Result: The integration launched two days ahead of schedule, with reusable custom hooks that the team adopted across two other features."
+        },
+        {
+          "id": "fe_tech_1",
+          "role": "Frontend Developer",
+          "experienceLevels": [
+            "Fresher / Entry Level",
+            "Junior (1-3 yrs)"
+          ],
+          "mode": "technical",
+          "category": "Technical",
+          "difficulty": "Medium",
+          "questionText": "Explain the difference between useEffect, useLayoutEffect, and useMemo in React. When would using useLayoutEffect prevent visual flickering?",
+          "expectedConcepts": [
+            "Component lifecycle",
+            "DOM paint timing",
+            "useLayoutEffect runs synchronously after DOM mutations but before browser paints",
+            "useMemo for memoizing expensive calculations",
+            "Visual flicker prevention with layout measurements"
+          ],
+          "hints": [
+            "Think about the exact point in time when the browser repaints pixels to the screen.",
+            "useLayoutEffect is synchronous with DOM mutations, while useEffect is asynchronous and scheduled after the paint.",
+            "Consider reading element bounding rects or scroll positions before the user sees the frame."
+          ],
+          "idealAnswer": "In React, useEffect runs asynchronously after the component renders and after the browser has completed painting changes to the screen, which avoids blocking UI responsiveness. useLayoutEffect, on the other hand, fires synchronously after React mutates the DOM but before the browser performs layout and paint. It is specifically used when measuring DOM elements (e.g., getBoundingClientRect) or mutating styles before the user sees the frame, preventing visual flicker. useMemo is used to memoize expensive computations between re-renders based on a dependency array."
+        }
+      ],
+      "startedAt": "2026-10-14T05:48:17.316Z",
+      "totalDurationSeconds": 0,
+      "overallFeedback": {
+        "overallScore": 0,
+        "technicalReadiness": 0,
+        "communicationScore": 0,
+        "problemSolvingScore": 0,
+        "strengthsSummary": [],
+        "weaknessesSummary": [],
+        "actionableTips": [],
+        "recommendation": "In Progress",
+        "summaryText": ""
+      }
+    },
+    {
+      "_id": "session_1791956681695_k9p4uq",
+      "userId": "user_1791867129036_ovu2q9",
+      "title": "Full Stack Developer (technical - Medium)",
+      "role": "Full Stack Developer",
+      "experienceLevel": "Junior (1-3 yrs)",
+      "interviewMode": "technical",
+      "interactionMode": "voice",
+      "skills": [
+        "JavaScript",
+        "React",
+        "Node.js",
+        "REST APIs",
+        "System Design",
+        "Git"
+      ],
+      "difficulty": "Medium",
+      "status": "in-progress",
+      "currentQuestionIndex": 0,
+      "questions": [
+        {
+          "id": "hr_beh_1",
+          "role": "All Roles",
+          "experienceLevels": [
+            "Fresher / Entry Level",
+            "Junior (1-3 yrs)",
+            "Mid-Level (3-5 yrs)",
+            "Senior (5+ yrs)"
+          ],
+          "mode": "behavioral",
+          "category": "Behavioral",
+          "difficulty": "Medium",
+          "questionText": "Tell me about a challenging technical or project problem you faced, how you approached solving it, and what the ultimate result was.",
+          "expectedConcepts": [
+            "STAR Method",
+            "Situation & Context",
+            "Clear Task / Goal",
+            "Actionable Steps taken",
+            "Measurable Result / Impact",
+            "Personal learnings"
+          ],
+          "hints": [
+            "Structure your response: Situation, Task, Action, Result.",
+            "Be specific about YOUR contribution, using \"I\" instead of only \"we\".",
+            "Quantify the result with metrics (e.g., improved latency by 30%, delivered 2 days ahead of schedule)."
+          ],
+          "idealAnswer": "Situation: At my previous company/university project, our user dashboard experienced 4-second page load times due to unindexed database queries and oversized bundle sizes. Task: My objective was to reduce page load time under 1 second before our product launch. Action: I profiled network traffic, implemented code splitting with React lazy loading, and added database indexing on frequently filtered columns. Result: Load times dropped by 78% to 850ms, improving user retention by 22% during our launch sprint."
+        },
+        {
+          "id": "fs_tech_1",
+          "role": "Full Stack Developer",
+          "experienceLevels": [
+            "Fresher / Entry Level",
+            "Junior (1-3 yrs)",
+            "Mid-Level (3-5 yrs)"
+          ],
+          "mode": "technical",
+          "category": "Technical",
+          "difficulty": "Medium",
+          "questionText": "Explain how JWT (JSON Web Token) authentication works end-to-end. Compare storing tokens in localStorage vs httpOnly Secure Cookies in terms of security (XSS vs CSRF).",
+          "expectedConcepts": [
+            "JWT header, payload, and signature",
+            "Stateless authentication",
+            "localStorage vulnerability to XSS",
+            "httpOnly cookies protection against XSS",
+            "CSRF vulnerability and SameSite attribute / CSRF tokens",
+            "Token expiration & refresh token rotation"
+          ],
+          "hints": [
+            "Break down the structure of a JWT (Header.Payload.Signature).",
+            "If an attacker executes malicious JavaScript (XSS), what storage mechanism can they access?",
+            "How does SameSite cookie attribute mitigate CSRF attacks?"
+          ],
+          "idealAnswer": "JWTs consist of three parts: Header, Payload, and Signature, signed with a secret or private key. Upon login, the server signs and returns the token; the client attaches it to subsequent requests. Storing JWTs in localStorage is susceptible to Cross-Site Scripting (XSS), as any injected JS script can read localStorage and exfiltrate tokens. Storing tokens in httpOnly Secure cookies prevents JS access, effectively neutralizing XSS token theft. However, cookies are vulnerable to CSRF, which is mitigated using the SameSite=Strict/Lax cookie attribute and anti-CSRF tokens. Best practice is short-lived access tokens in memory/httpOnly cookies combined with refresh token rotation."
+        },
+        {
+          "id": "fe_tech_1",
+          "role": "Frontend Developer",
+          "experienceLevels": [
+            "Fresher / Entry Level",
+            "Junior (1-3 yrs)"
+          ],
+          "mode": "technical",
+          "category": "Technical",
+          "difficulty": "Medium",
+          "questionText": "Explain the difference between useEffect, useLayoutEffect, and useMemo in React. When would using useLayoutEffect prevent visual flickering?",
+          "expectedConcepts": [
+            "Component lifecycle",
+            "DOM paint timing",
+            "useLayoutEffect runs synchronously after DOM mutations but before browser paints",
+            "useMemo for memoizing expensive calculations",
+            "Visual flicker prevention with layout measurements"
+          ],
+          "hints": [
+            "Think about the exact point in time when the browser repaints pixels to the screen.",
+            "useLayoutEffect is synchronous with DOM mutations, while useEffect is asynchronous and scheduled after the paint.",
+            "Consider reading element bounding rects or scroll positions before the user sees the frame."
+          ],
+          "idealAnswer": "In React, useEffect runs asynchronously after the component renders and after the browser has completed painting changes to the screen, which avoids blocking UI responsiveness. useLayoutEffect, on the other hand, fires synchronously after React mutates the DOM but before the browser performs layout and paint. It is specifically used when measuring DOM elements (e.g., getBoundingClientRect) or mutating styles before the user sees the frame, preventing visual flicker. useMemo is used to memoize expensive computations between re-renders based on a dependency array."
+        },
+        {
+          "id": "fe_tech_2",
+          "role": "Frontend Developer",
+          "experienceLevels": [
+            "Fresher / Entry Level",
+            "Junior (1-3 yrs)",
+            "Mid-Level (3-5 yrs)"
+          ],
+          "mode": "technical",
+          "category": "Technical",
+          "difficulty": "Medium",
+          "questionText": "How does CSS specificity work, and how does the browser resolve conflicting styles? Explain how the Cascade Layer (@layer) changes this.",
+          "expectedConcepts": [
+            "Inline styles (1000)",
+            "IDs (100)",
+            "Classes / Attributes / Pseudo-classes (10)",
+            "Elements / Pseudo-elements (1)",
+            "!important modifier",
+            "@layer cascade layers"
+          ],
+          "hints": [
+            "Break specificity down into a 4-part weight system (Inline, ID, Class, Element).",
+            "Mention how the !important declaration alters the standard resolution order.",
+            "@layer allows developers to control cascade priority regardless of selector specificity."
+          ],
+          "idealAnswer": "CSS specificity is a weight system calculated based on the types of selectors used: inline styles (1,0,0,0), ID selectors (0,1,0,0), classes, attributes, and pseudo-classes (0,0,1,0), and element selectors (0,0,0,1). The selector with the highest tuple weight wins. The !important declaration overrides normal specificity. Modern CSS introduced @layer, which defines explicit priority orders between style layers; styles in higher-priority layers override lower-priority layers regardless of the specificity within those layers."
+        },
+        {
+          "id": "be_tech_2",
+          "role": "Backend Developer",
+          "experienceLevels": [
+            "Junior (1-3 yrs)",
+            "Mid-Level (3-5 yrs)",
+            "Senior (5+ yrs)"
+          ],
+          "mode": "technical",
+          "category": "Architecture",
+          "difficulty": "Medium",
+          "questionText": "How would you design a rate limiter for a public REST API? Compare Token Bucket and Sliding Window Log algorithms, and explain how Redis can be used in a distributed environment.",
+          "expectedConcepts": [
+            "Rate limiting algorithms",
+            "Token Bucket vs Sliding Window",
+            "Distributed state with Redis",
+            "Race conditions & atomic Lua scripts",
+            "HTTP 429 Too Many Requests with Retry-After header"
+          ],
+          "hints": [
+            "Think about burst traffic handling vs uniform pacing.",
+            "How do you avoid race conditions when multiple API server nodes handle requests concurrently?",
+            "Redis INCR or sorted sets with Lua scripts ensure atomic checks."
+          ],
+          "idealAnswer": "A rate limiter protects APIs from abuse and denial of service. The Token Bucket algorithm allows token accumulation up to a maximum capacity, accommodating bursts while enforcing a steady refill rate. The Sliding Window Counter or Log algorithm tracks timestamps in a rolling window, eliminating edge-case burst spikes at boundary resets. In a distributed multi-server setup, state must be centralized in Redis. We use Redis sorted sets or key increments evaluated via atomic Lua scripts to prevent race conditions across parallel requests. When limits are exceeded, return HTTP 429 with Retry-After and X-RateLimit headers."
+        }
+      ],
+      "startedAt": "2026-10-14T05:44:41.695Z",
+      "totalDurationSeconds": 0,
+      "overallFeedback": {
+        "overallScore": 0,
+        "technicalReadiness": 0,
+        "communicationScore": 0,
+        "problemSolvingScore": 0,
+        "strengthsSummary": [],
+        "weaknessesSummary": [],
+        "actionableTips": [],
+        "recommendation": "In Progress",
+        "summaryText": ""
+      }
+    },
+    {
+      "_id": "session_1791868319685_36umgg",
+      "userId": "user_1791867129036_ovu2q9",
+      "title": "Frontend Developer Technical Mock Interview",
+      "role": "Frontend Developer",
+      "experienceLevel": "Fresher / Entry Level",
+      "interviewMode": "technical",
+      "interactionMode": "text",
+      "skills": [],
+      "difficulty": "Medium",
+      "status": "completed",
+      "currentQuestionIndex": 1,
+      "questions": [
+        {
+          "id": "fe_tech_2",
+          "role": "Frontend Developer",
+          "experienceLevels": [
+            "Fresher / Entry Level",
+            "Junior (1-3 yrs)",
+            "Mid-Level (3-5 yrs)"
+          ],
+          "mode": "technical",
+          "category": "Technical",
+          "difficulty": "Medium",
+          "questionText": "How does CSS specificity work, and how does the browser resolve conflicting styles? Explain how the Cascade Layer (@layer) changes this.",
+          "expectedConcepts": [
+            "Inline styles (1000)",
+            "IDs (100)",
+            "Classes / Attributes / Pseudo-classes (10)",
+            "Elements / Pseudo-elements (1)",
+            "!important modifier",
+            "@layer cascade layers"
+          ],
+          "hints": [
+            "Break specificity down into a 4-part weight system (Inline, ID, Class, Element).",
+            "Mention how the !important declaration alters the standard resolution order.",
+            "@layer allows developers to control cascade priority regardless of selector specificity."
+          ],
+          "idealAnswer": "CSS specificity is a weight system calculated based on the types of selectors used: inline styles (1,0,0,0), ID selectors (0,1,0,0), classes, attributes, and pseudo-classes (0,0,1,0), and element selectors (0,0,0,1). The selector with the highest tuple weight wins. The !important declaration overrides normal specificity. Modern CSS introduced @layer, which defines explicit priority orders between style layers; styles in higher-priority layers override lower-priority layers regardless of the specificity within those layers.",
+          "hintsUsed": 1,
+          "candidateAnswer": "React uses an in-memory Virtual DOM to compare UI changes before mutating the real DOM. Reconciliation uses a heuristic O(n) algorithm with key attributes to batch updates and avoid browser reflows.",
+          "candidateCode": "",
+          "codeLanguage": "javascript",
+          "timeTakenSeconds": 120,
+          "answeredAt": "2026-10-13T05:11:59.710Z",
+          "evaluation": {
+            "score": 60,
+            "relevance": 60,
+            "technicalDepth": 61,
+            "clarity": 56,
+            "starScore": 0,
+            "codeQuality": 0,
+            "timeEfficiency": 90,
+            "strengths": [
+              "Addressed core concepts effectively: Classes / Attributes / Pseudo-classes (10).",
+              "Direct and concise communication style."
+            ],
+            "improvements": [
+              "Deepen discussion on: Inline styles (1000) and IDs (100).",
+              "Elaborate further on internal trade-offs, implementation gotchas, or architectural nuances."
+            ],
+            "feedbackText": "Your answer scored 60/100. Acceptable start, but needs stronger technical depth and more concrete examples to convince the interviewer.",
+            "evaluatedAt": "2026-10-13T05:11:59.710Z"
+          }
+        },
+        {
+          "id": "fe_tech_1",
+          "role": "Frontend Developer",
+          "experienceLevels": [
+            "Fresher / Entry Level",
+            "Junior (1-3 yrs)"
+          ],
+          "mode": "technical",
+          "category": "Technical",
+          "difficulty": "Medium",
+          "questionText": "Explain the difference between useEffect, useLayoutEffect, and useMemo in React. When would using useLayoutEffect prevent visual flickering?",
+          "expectedConcepts": [
+            "Component lifecycle",
+            "DOM paint timing",
+            "useLayoutEffect runs synchronously after DOM mutations but before browser paints",
+            "useMemo for memoizing expensive calculations",
+            "Visual flicker prevention with layout measurements"
+          ],
+          "hints": [
+            "Think about the exact point in time when the browser repaints pixels to the screen.",
+            "useLayoutEffect is synchronous with DOM mutations, while useEffect is asynchronous and scheduled after the paint.",
+            "Consider reading element bounding rects or scroll positions before the user sees the frame."
+          ],
+          "idealAnswer": "In React, useEffect runs asynchronously after the component renders and after the browser has completed painting changes to the screen, which avoids blocking UI responsiveness. useLayoutEffect, on the other hand, fires synchronously after React mutates the DOM but before the browser performs layout and paint. It is specifically used when measuring DOM elements (e.g., getBoundingClientRect) or mutating styles before the user sees the frame, preventing visual flicker. useMemo is used to memoize expensive computations between re-renders based on a dependency array."
+        }
+      ],
+      "startedAt": "2026-10-13T05:11:59.685Z",
+      "totalDurationSeconds": 120,
+      "overallFeedback": {
+        "overallScore": 60,
+        "technicalReadiness": 61,
+        "communicationScore": 56,
+        "problemSolvingScore": 60,
+        "strengthsSummary": [
+          "Addressed core concepts effectively: Classes / Attributes / Pseudo-classes (10).",
+          "Direct and concise communication style."
+        ],
+        "weaknessesSummary": [
+          "Deepen discussion on: Inline styles (1000) and IDs (100).",
+          "Elaborate further on internal trade-offs, implementation gotchas, or architectural nuances."
+        ],
+        "actionableTips": [
+          "Practice time-boxing your answers to 2-3 minutes for optimal verbal flow.",
+          "Quantify results using business or performance metrics (e.g., latency, traffic, lines of code).",
+          "Structure complex technical answers from high-level architecture down to implementation details."
+        ],
+        "recommendation": "Lean Hire",
+        "summaryText": "Candidate scored an overall 60/100 across 1 answered questions for the Frontend Developer position. Demonstrated solid foundational understanding with room to deepen specific edge cases and structure."
+      },
+      "completedAt": "2026-10-13T05:11:59.732Z"
+    },
+    {
+      "_id": "session_1791867129044_2sgt97",
+      "userId": "user_1791867129036_ovu2q9",
+      "title": "Behavioral & Leadership Mock (STAR Method)",
+      "role": "Full Stack Developer",
+      "experienceLevel": "Junior (1-3 yrs)",
+      "interviewMode": "behavioral",
+      "interactionMode": "voice",
+      "skills": [
+        "Teamwork",
+        "Conflict Resolution",
+        "Ownership",
+        "Communication"
+      ],
+      "status": "completed",
+      "currentQuestionIndex": 2,
+      "totalDurationSeconds": 610,
+      "startedAt": "2026-10-13T04:52:09.044Z",
+      "completedAt": "2026-10-08T05:02:19.042Z",
+      "questions": [
+        {
+          "id": "q_seed_3",
+          "questionText": "Tell me about a time you disagreed with a teammate on a technical decision and how you resolved it.",
+          "category": "Behavioral",
+          "difficulty": "Medium",
+          "expectedConcepts": [
+            "STAR Method",
+            "Situation & Task",
+            "Collaborative Action",
+            "Measurable Result",
+            "Humility"
+          ],
+          "hints": [
+            "Focus on technical merit and empathy rather than proving yourself right."
+          ],
+          "idealAnswer": "Situation: During a sprint, our senior engineer wanted Redux while I advocated for React Query. Task: Choose the optimal state management tool without creating friction. Action: I benchmarked both with a quick spike prototype and presented data showing a 40% reduction in boilerplate and built-in caching. Result: The team adopted React Query, accelerating delivery by a week while maintaining mutual respect.",
+          "candidateAnswer": "In our last project, a teammate wanted to implement client-side polling for notification updates, whereas I suggested Server-Sent Events (SSE) to reduce server load. I listened to his concern regarding simplicity, then built a quick proof-of-concept showing SSE reduced network requests by 85%. We agreed to test it together, and it worked flawlessly in production without bogging down our database.",
+          "timeTakenSeconds": 180,
+          "evaluation": {
+            "score": 85,
+            "relevance": 90,
+            "technicalDepth": 80,
+            "clarity": 88,
+            "starScore": 88,
+            "codeQuality": 0,
+            "timeEfficiency": 85,
+            "strengths": [
+              "Structured response adhering closely to the STAR method",
+              "Demonstrated proof-of-concept spike approach over arguing",
+              "Quantified the outcome with an 85% network reduction metric"
+            ],
+            "improvements": [
+              "Mention how you ensured the teammate felt valued throughout the outcome."
+            ],
+            "feedbackText": "Very well structured behavioral answer showcasing maturity, data-driven compromise, and teamwork.",
+            "evaluatedAt": "2026-10-13T04:52:09.043Z"
+          }
+        }
+      ],
+      "overallFeedback": {
+        "overallScore": 85,
+        "technicalReadiness": 82,
+        "communicationScore": 88,
+        "problemSolvingScore": 85,
+        "strengthsSummary": [
+          "Effective utilization of the STAR framework",
+          "Strong empathy and evidence-driven problem resolution"
+        ],
+        "weaknessesSummary": [
+          "Could include more details on long-term team relationship building"
+        ],
+        "actionableTips": [
+          "Include personal reflection on what you learned from the conflict"
+        ],
+        "recommendation": "Hire",
+        "summaryText": "Alex demonstrated solid interpersonal skills and professional conflict resolution."
+      }
+    },
+    {
+      "_id": "session_1791867129041_mxfdkz",
+      "userId": "user_1791867129036_ovu2q9",
+      "title": "Full Stack SDE - React & Node Architecture",
+      "role": "Full Stack Developer",
+      "experienceLevel": "Junior (1-3 yrs)",
+      "interviewMode": "technical",
+      "interactionMode": "text",
+      "skills": [
+        "React",
+        "Node.js",
+        "REST APIs",
+        "Performance"
+      ],
+      "status": "completed",
+      "currentQuestionIndex": 2,
+      "totalDurationSeconds": 840,
+      "startedAt": "2026-10-13T04:52:09.041Z",
+      "completedAt": "2026-10-11T05:06:09.039Z",
+      "questions": [
+        {
+          "id": "q_seed_1",
+          "questionText": "Explain how the virtual DOM works in React and how reconciliation optimizes re-renders.",
+          "category": "Technical",
+          "difficulty": "Medium",
+          "expectedConcepts": [
+            "Virtual DOM tree diffing",
+            "Reconciliation algorithm",
+            "Key prop importance",
+            "Batching"
+          ],
+          "hints": [
+            "Think about what happens in memory when state changes before touching real DOM nodes."
+          ],
+          "idealAnswer": "React maintains an in-memory representation of the UI called the Virtual DOM. When component state changes, React creates a new VDOM tree and diffs it against the previous one using its reconciliation algorithm (Fiber). It computes the minimal set of changes (mutations) and batches them into a single update to the real DOM, avoiding expensive layout reflows.",
+          "candidateAnswer": "React maintains a lightweight JavaScript object representation of the real DOM. When state changes, a new virtual tree is generated. React compares the old and new trees using its diffing algorithm (O(n) heuristic), identifying the exact DOM nodes that changed. It then batches these mutations to update the real DOM efficiently, minimizing browser reflows and repaints.",
+          "timeTakenSeconds": 195,
+          "evaluation": {
+            "score": 92,
+            "relevance": 95,
+            "technicalDepth": 90,
+            "clarity": 92,
+            "starScore": 0,
+            "codeQuality": 0,
+            "timeEfficiency": 90,
+            "strengths": [
+              "Clear explanation of the in-memory representation",
+              "Accurately highlighted batching and avoidance of browser reflows",
+              "Mentioned heuristic diffing complexity"
+            ],
+            "improvements": [
+              "Could briefly touch upon React Fiber and how keys prevent unnecessary unmounting in lists."
+            ],
+            "feedbackText": "Strong, articulate response demonstrating a solid conceptual grasp of React internal mechanics and performance implications.",
+            "evaluatedAt": "2026-10-13T04:52:09.039Z"
+          }
+        },
+        {
+          "id": "q_seed_2",
+          "questionText": "How do you handle unhandled promise rejections and asynchronous error handling in Node.js Express APIs?",
+          "category": "Technical",
+          "difficulty": "Medium",
+          "expectedConcepts": [
+            "async/await try-catch",
+            "Express error handling middleware",
+            "process.on unhandledRejection",
+            "Custom AppError"
+          ],
+          "hints": [
+            "Mention both middleware flow and process-level crash safety."
+          ],
+          "idealAnswer": "In Express, async route handlers should wrap asynchronous logic with try-catch blocks or use express-async-errors wrapper to forward errors to next(err). A centralized error-handling middleware function (err, req, res, next) formats standard JSON responses and logs errors. Additionally, listen to process.on(\"unhandledRejection\") and \"uncaughtException\" to cleanly log and terminate or restart workers.",
+          "candidateAnswer": "In modern Express applications, I wrap asynchronous routes with try-catch blocks or use an async handler wrapper that forwards any rejected promises to next(err). I configure a centralized error middleware at the bottom of the middleware stack with 4 arguments (err, req, res, next) to send structured error payloads with appropriate HTTP status codes. For safety, I also attach process.on(\"unhandledRejection\") to log unexpected failures.",
+          "timeTakenSeconds": 220,
+          "evaluation": {
+            "score": 88,
+            "relevance": 90,
+            "technicalDepth": 86,
+            "clarity": 89,
+            "starScore": 0,
+            "codeQuality": 0,
+            "timeEfficiency": 88,
+            "strengths": [
+              "Mentioned 4-argument Express error middleware convention",
+              "Good emphasis on centralized error handling and structured JSON payloads",
+              "Included process-level unhandledRejection listener"
+            ],
+            "improvements": [
+              "Could mention process exit/restart strategy with a process manager like PM2 for fatal errors."
+            ],
+            "feedbackText": "Great practical answer showing enterprise Node.js experience with proper middleware architecture.",
+            "evaluatedAt": "2026-10-13T04:52:09.039Z"
+          }
+        }
+      ],
+      "overallFeedback": {
+        "overallScore": 90,
+        "technicalReadiness": 91,
+        "communicationScore": 89,
+        "problemSolvingScore": 88,
+        "strengthsSummary": [
+          "Deep conceptual understanding of frontend rendering pipelines",
+          "Solid architecture principles for backend error recovery",
+          "Clear and structured verbal communication"
+        ],
+        "weaknessesSummary": [
+          "Could quantify performance benefits with concrete benchmarks",
+          "Slightly over-focused on happy path edge cases"
+        ],
+        "actionableTips": [
+          "Practice explaining React 18 concurrent features (useTransition, Suspense)",
+          "Review node cluster management and graceful shutdown signals (SIGTERM)"
+        ],
+        "recommendation": "Strong Hire",
+        "summaryText": "Candidate demonstrated great proficiency in full-stack architecture, providing confident, well-reasoned answers."
+      }
+    }
+  ]
+}
